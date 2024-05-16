@@ -59,6 +59,11 @@ body {
     text-align: center;
 }
 
+.main {
+    position: relative;
+    overflow: hidden;
+}
+
 .header {
     padding: 40px 0;
 }
@@ -126,6 +131,7 @@ body {
 
 .products {
     padding: 100px 0;
+    position: relative;
 }
 
 .products-items {
@@ -223,6 +229,7 @@ body {
 
 .order {
     padding-bottom: 102px;
+    position: relative;
 }
 
 .order .container {
@@ -310,4 +317,25 @@ body {
     margin-top: 14px;
     font-size: 18px;
     line-height: 130%;
+}
+
+.line1 {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: calc(100% - 960px);
+}
+
+.line2 {
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+    left: 0;
+}
+
+.line3 {
+    position: absolute;
+    z-index: -1;
+    top: -920px;
+    left: 0;
 }
