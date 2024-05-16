@@ -181,4 +181,11 @@ body {
 .products-item-extra {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.products-item-price {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    color: #5243F4;
+    font-size: 24px;
 }
