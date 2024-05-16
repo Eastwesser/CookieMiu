@@ -56,6 +56,7 @@ body {
     font-family: 'Steppe-ExtraBold', sans-serif;
     font-size: 60px;
     line-height: 100%;
+    text-align: center;
 }
 
 .header {
@@ -183,4 +184,39 @@ body {
 
 .products-item-weight {
     font-size: 12px;
+}
+
+.love {
+    padding: 64px 0 150px 0;
+}
+
+.love-items {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.love-item {
+    width: 590px;
+    height: 453px;
+}
+
+.love-item-white {
+    background-color: white;
+    padding: 110px 80px;
+    box-sizing: border-box;
+    color: #5D3427;
+}
+
+.love-item-title {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 24px;
+    line-height: 110%;
+    margin-bottom: 20px;
+}
+
+.love-item-text {
+    font-family: 'Steppe-Book', sans-serif;
+    font-size: 18px;
+    line-height: 130%;
 }
