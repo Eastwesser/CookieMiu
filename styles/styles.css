@@ -43,6 +43,25 @@ body {
     background-color: #EEEEEE;
 }
 
+.violet-button{
+    background-color: #5243f4;
+    border-radius: 60px;
+    width: 178px;
+    height: 58px;
+    box-sizing: border-box;
+    padding: 18px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.violet-button:hover {
+    background-color: #5d09a5;
+}
+
 .header {
     padding: 40px 0;
 }
