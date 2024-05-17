@@ -31,5 +31,33 @@ document.getElementById("change-currency").onclick = function (e) {
     }
     e.target.innerText = newCurrency;
 
+    for (let i = 0; i < prices.length; i++) {
+        prices[i].innerText = +(prices[i].getAttribute("data-base-price") * coefficient).toFixed(1) + " " + newCurrency;
+    }
+
+}
+
+const product = document.getElementById("product");
+const name = document.getElementById("name");
+const phone = document.getElementById("phone");
+document.getElementById("order-action").onclick = function () {
+    let hasError = false;
+
+    [product, name, phone].forEach(item => {
+        if (!item.value) {
+            item.style.borderColor = "red";
+            hasError = true;
+        } else {
+            item.style.borderColor = "";
+        }
+    });
+
+    if (!hasError) {
+        [product, name, phone].forEach(item => {
+            item.value = "";
+        });
+        alert("Спасибо за заказ! Мы скоро свяжемся с вами!");
+    }
+
 
 }
