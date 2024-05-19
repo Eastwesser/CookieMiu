@@ -1,5 +1,5 @@
 <main class="main">
-  <div class="currency" title="Изменить валюту" id="change-currency">$</div>
+  <div class="currency" title="Изменить валюту" id="change-currency" (click)="changeCurrency()">{{currency}}</div>
   <header class="header">
     <div class="container">
       <div class="logo">
@@ -58,7 +58,7 @@
             </div>
             <div class="products-item-extra">
               <div class="products-item-info">
-                <div class="products-item-price" >{{product.price}} $</div>
+                <div class="products-item-price" >{{product.price}} {{ currency }}</div>
                 <div class="products-item-weight">{{product.weight}}</div>
               </div>
               <button class="button violet-button" (click)="scrollTo(order)">Заказать</button>
