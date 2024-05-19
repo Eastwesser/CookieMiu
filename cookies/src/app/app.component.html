@@ -103,11 +103,11 @@
             Откройте для себя волшебство вкуса с нашим премиальным печеньем!
             Закажите прямо сейчас и окунитесь в мир сладких наслаждений.
           </div>
-          <div class="order-form-inputs">
-            <input type="text" placeholder="Выберите печенье" id="product">
-            <input type="text" placeholder="Ваше имя" id="name">
-            <input type="text" placeholder="Ваш телефон" id="phone">
-            <button class="button violet-button" id="order-action">Оформить заказ</button>
+          <div class="order-form-inputs" [formGroup]="form">
+            <input type="text" placeholder="Выберите печенье" id="product" formControlName="product">
+            <input type="text" placeholder="Ваше имя" id="name" formControlName="name">
+            <input type="text" placeholder="Ваш телефон" id="phone" formControlName="phone">
+            <button class="button violet-button" id="order-action" (click)="confirmOrder()">Оформить заказ</button>
           </div>
         </div>
         <div class="order-block-image">
