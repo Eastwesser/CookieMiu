@@ -153,6 +153,7 @@ export class AppComponent {
   confirmOrder() {
     if (this.form.valid) {
       alert("Спасибо за заказ! Мы скоро свяжемся с вами!");
+      this.form.reset();
     }
   }
 
