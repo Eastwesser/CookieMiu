@@ -22,7 +22,7 @@ export class AppComponent {
 
   }
 
-  // change https to the specific base of our backend
+  // change https to the specific base of our backend https://cookiemiu.com/cookies
   ngOnInit() {
     this.http.get("https://testologia.ru/cookies").subscribe(data => this.productsData = data);
   }
@@ -34,7 +34,7 @@ export class AppComponent {
     }
   }
 
-  // change https to the specific base of our backend
+  // change https to the specific base of our backend https://cookiemiu.com/cookies
   switchSugarFree(e: any) {
     this.http.get("https://testologia.ru/cookies" + (e.currentTarget.checked ? '?sugarfree' : ''))
       .subscribe(data => this.productsData = data);
@@ -67,7 +67,7 @@ export class AppComponent {
     });
   }
 
-  // change https to the specific base of our backend
+  // change https to the specific base of our backend https://cookiemiu.com/cookies
   confirmOrder() {
     if (this.form.valid) {
       this.http.post("https://testologia.ru/cookies-order", this.form.value)
