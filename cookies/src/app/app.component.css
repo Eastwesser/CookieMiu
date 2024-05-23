@@ -387,7 +387,7 @@
   opacity: 1;
 }
 
-.loader .lottie-player {
+.loader lottie-player {
   display: block;
   width: 300px;
   height: 300px;

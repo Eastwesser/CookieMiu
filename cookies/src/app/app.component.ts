@@ -24,8 +24,8 @@ export class AppComponent {
   orderImageStyle: any;
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e: MouseEvent) {
-    this.mainImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 8) + "px," + ((e.clientY + 0.3) / 8) + "px)"};
-    this.orderImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 10) + "px," + ((e.clientY + 0.3) / 10) + "px)"};
+    this.mainImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 12) + "px," + ((e.clientY + 0.3) / 12) + "px)"};
+    this.orderImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 12) + "px," + ((e.clientY + 0.3) / 12) + "px)"};
   }
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
