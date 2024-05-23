@@ -36,7 +36,7 @@
           <button class="button" id="main-action-button" (click)="scrollTo(products)">Заказать</button>
         </div>
       </div>
-      <img src="./assets/images/cookie.png" alt="Cookie" class="main-image">
+      <img src="./assets/images/cookie.png" alt="Cookie" class="main-image" [ngStyle]="mainImageStyle">
     </div>
 
   </section>
@@ -117,7 +117,7 @@
           </div>
         </div>
         <div class="order-block-image">
-          <img src="./assets/images/order.png" alt="Cookies Tower" class="order-image">
+          <img src="./assets/images/order.png" alt="Cookies Tower" class="order-image" [ngStyle]="orderImageStyle">
         </div>
       </div>
     </div>
@@ -131,3 +131,7 @@
   </footer>
 
 </main>
+
+<div class="loader">
+  <lottie-player src="./assets/cookie.json" background="transparent" speed="1.5" autoplay></lottie-player>
+</div>

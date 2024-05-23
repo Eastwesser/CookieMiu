@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 
@@ -10,7 +10,9 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent {
 
   currency = "$";
-  productsData : any;
+  productsData: any;
+  loader = true;
+  loaderShowed = true;
 
   form = this.fb.group({
     product: ["", Validators.required],
@@ -18,12 +20,28 @@ export class AppComponent {
     phone: ["", Validators.required],
   });
 
+  mainImageStyle: any;
+  orderImageStyle: any;
+  @HostListener("document:mousemove", ["$event"])
+  onMouseMove(e: MouseEvent) {
+    this.mainImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 8) + "px," + ((e.clientY + 0.3) / 8) + "px)"};
+    this.orderImageStyle = {transform: "translate(" + ((e.clientX + 0.3) / 10) + "px," + ((e.clientY + 0.3) / 10) + "px)"};
+  }
+
   constructor(private fb: FormBuilder, private http: HttpClient) {
 
   }
 
   // change https to the specific base of our backend https://cookiemiu.com/cookies
   ngOnInit() {
+    setTimeout(() => {
+      this.loaderShowed = false;
+    }, 2000);
+
+    setTimeout(() => {
+      this.loader = false;
+    }, 3000);
+
     this.http.get("https://testologia.ru/cookies").subscribe(data => this.productsData = data);
   }
 
@@ -51,8 +69,7 @@ export class AppComponent {
     } else if (this.currency === "₽") {
       newCurrency = "BYN";
       coefficient = 3;
-    }
-    else if (this.currency === 'BYN') {
+    } else if (this.currency === 'BYN') {
       newCurrency = '€';
       coefficient = 0.9;
     } else if (this.currency === '€') {
@@ -62,7 +79,7 @@ export class AppComponent {
 
     this.currency = newCurrency;
 
-    this.productsData.forEach((item:any)=> {
+    this.productsData.forEach((item: any) => {
       item.price = +(item.basePrice * coefficient).toFixed(1);
     });
   }
@@ -72,11 +89,11 @@ export class AppComponent {
     if (this.form.valid) {
       this.http.post("https://testologia.ru/cookies-order", this.form.value)
         .subscribe({
-          next: (response: any) :void => {
+          next: (response: any): void => {
             alert(response.message);
             this.form.reset();
           },
-          error: (response: any) :void => {
+          error: (response: any): void => {
             alert(response.error.message);
           },
         });
