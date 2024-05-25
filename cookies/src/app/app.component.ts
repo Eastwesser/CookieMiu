@@ -84,7 +84,7 @@ export class AppComponent {
     });
   }
 
-  // change https to the specific base of our backend https://cookiemiu.com/cookies
+  // change https to the specific base of our backend https://cookiemiu.com/cookies-order
   confirmOrder() {
     if (this.form.valid) {
       this.http.post("https://testologia.ru/cookies-order", this.form.value)
