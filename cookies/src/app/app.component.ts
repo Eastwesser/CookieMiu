@@ -33,6 +33,7 @@ export class AppComponent {
   }
 
   // change https to the specific base of our backend https://cookiemiu.com/cookies
+  // https://cookiemiu.pythonanywhere.com/cookies
   ngOnInit() {
     setTimeout(() => {
       this.loaderShowed = false;
@@ -53,6 +54,7 @@ export class AppComponent {
   }
 
   // change https to the specific base of our backend https://cookiemiu.com/cookies
+  // https://cookiemiu.pythonanywhere.com/cookies
   switchSugarFree(e: any) {
     this.http.get("https://testologia.ru/cookies" + (e.currentTarget.checked ? '?sugarfree' : ''))
       .subscribe(data => this.productsData = data);
@@ -85,6 +87,7 @@ export class AppComponent {
   }
 
   // change https to the specific base of our backend https://cookiemiu.com/cookies-order
+  // https://cookiemiu.pythonanywhere.com/cookies-order
   confirmOrder() {
     if (this.form.valid) {
       this.http.post("https://testologia.ru/cookies-order", this.form.value)
